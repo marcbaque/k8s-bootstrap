@@ -10,14 +10,14 @@ spec:
   project: default
   source:
     path: bootstrap/bootstrap-resources
-    repoURL: https://github.com/hivenetes/k8s-bootstrapper
+    repoURL: https://github.com/marcbaque/k8s-bootstrap
     targetRevision: HEAD
     helm:
       parameters:
         - name: domain
-          value: {{ .Values.domain }}
+          value: { { .Values.domain } }
   syncPolicy:
     automated:
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
