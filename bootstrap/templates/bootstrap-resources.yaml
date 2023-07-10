@@ -15,7 +15,7 @@ spec:
     helm:
       parameters:
         - name: domain
-          value: { { .Values.domain } }
+          value: "{{ .Values.domain }}""
   syncPolicy:
     automated:
       selfHeal: true
